@@ -3,7 +3,7 @@ var ProdutoDaoAbobrinha = require('../persistence/ProdutoDao');
 
 module.exports = function (app) {
   app.get('/', function(req,res){
-    res.redirect('/produtos');
+    res.redirect('/produtos/lista');
   });
 
   app.get('/produtos', function(req,res){
@@ -20,6 +20,14 @@ module.exports = function (app) {
       });
     });
     con.end();
+  });
+
+  app.post('/produtos',function(req,res){
+    var produto = req.body;
+    var dao = new ProdutoDaoAbobrinha( new ConnectionFactory().getConnection());
+    dao.salva(produto, function(erros){
+      res. redirect('/produtos')
+    });
   });
 
   app.get('/produtos/novo', function(req,res){
