@@ -1,7 +1,7 @@
 # Caelum NodeJS
 
 ## Git
- 
+
     git@gitlab.com:edandaniel/caelum-node-course-1.git
     https://gitlab.com/edandaniel/caelum-node-course-.git
 
@@ -31,11 +31,9 @@ Padrão ser **private** pela comunidade, não ficar usando como public.
     - ~1.13.2
   - [citation needed]
 
-###
+## Mysql
 
-# Mysql
-
-""" sql
+```sql
   mysql -u root;
 	show databases;
   create database cdc;
@@ -51,4 +49,4 @@ Padrão ser **private** pela comunidade, não ficar usando como public.
   INSERT INTO produtos(titulo, descricao, preco) VALUES('50 touros cinzas', 'toureiro cinza', 0.90);
   INSERT INTO produtos(titulo, descricao, preco) VALUES('estevão rei', 'coletanea de historias dele', 1.90);
   INSERT INTO produtos(titulo, descricao, preco) VALUES('fases da lua', 'vampiros e batman', 10.90);
-"""
+```
