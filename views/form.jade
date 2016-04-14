@@ -2,21 +2,24 @@ doctype html
 html(lang="pt-BR")
   head
     title La gran lista del Productos
-    link(rel='stylesheet',href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css')
+    //link(rel='stylesheet',href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css')
+    script(type='text/javascript',src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+    link(rel='stylesheet',href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
     style
       //table spin
   body
     //script(type='text/javascript').
-    div(class='container')
-      h1 NEW PRODUCT!!!!😂😂😂😂
-      form(action='/produtos')
-        label(for='titulo',text='titulo') titulo
-        input(name='titulo',type='text') 
-        
-        label(for='preco',text='preco') preco
-        input(name='preco',type='text')
-        
-        label(for='descricao',text='descricao') descricao
-        input(name='descricao',type='text')
-        br
-        input(type='submit',value='cadastrar')
+    div(class='container',style='text-align: center;')
+      h1(class='title') NEW PRODUCT!!!!😂😂😂😂
+      form(action='/produtos',method='POST')
+        div(class='form-group')
+          label(for='titulo',text='titulo') titulo
+          input(name='titulo',type='text') 
+          
+          label(for='preco',text='preco') preco
+          input(name='preco',type='text')
+          
+          label(for='descricao',text='descricao') descricao
+          input(name='descricao',type='text')
+          br
+          input(class='btn btn-default',type='submit',value='cadastrar')
