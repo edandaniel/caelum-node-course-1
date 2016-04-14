@@ -1,4 +1,3 @@
-var ConnectionFactory = require('../persistence/ConnectionFactory');
 var ProdutoDaoAbobrinha = require('../persistence/ProdutoDao');
 
 module.exports = function (app) {
@@ -24,9 +23,9 @@ module.exports = function (app) {
 
   app.post('/produtos',function(req,res){
     var produto = req.body;
-    var dao = new ProdutoDaoAbobrinha( new ConnectionFactory().getConnection());
+    var dao = new ProdutoDaoAbobrinha( app.get('connection') );
     dao.salva(produto, function(erros){
-      res.redirect('/produtos')
+      res.redirect('/produtos');
     });
   });
 
