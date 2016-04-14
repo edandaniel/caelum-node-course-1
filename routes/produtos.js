@@ -7,7 +7,7 @@ module.exports = function (app) {
     var ConnectionFactory = require('../persistence/ConnectionFactory');
     var con = new ConnectionFactory().getConnection();
     var ProdutoDaoAbobrinha = require('../persistence/ProdutoDao');
-    var dao = new ProdutoDaoAbobrinha(con)//dao = data access object
+    var dao = new ProdutoDaoAbobrinha(con);//dao = data access object
     dao.lista(function(erros,resultado,colunas){
       res.render('lista',{produtos:resultado});
     });
