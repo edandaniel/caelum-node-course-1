@@ -21,4 +21,15 @@ module.exports = function (app) {
     });
     con.end();
   });
+
+  app.get('/produtos/novo', function(req,res){
+    var con = new ConnectionFactory().getConnection();
+    var dao = new ProdutoDaoAbobrinha(con);//dao = data access object
+    dao.lista(function(erros,resultado,colunas){
+        res.render('form');
+    });
+    con.end();
+  });
+
+
 }
