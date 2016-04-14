@@ -54,3 +54,17 @@ Padrão ser **private** pela comunidade, não ficar usando como public.
 ## Curl
 
     curl -H "Accept:application/json" http://localhost:3000/produtos
+
+## HTTP requests
+
+- GET
+  - **Não** modifica param na underline
+
+- POST
+  - Modifica, **cria** params no body
+
+- PUT
+  - Modifica, **altera** no body
+
+- DELETE
+  - Modifica, **deleta**
