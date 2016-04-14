@@ -1,0 +1,22 @@
+doctype html
+html(lang="pt-BR")
+  head
+    title La gran lista del Productos
+    link(rel='stylesheet',href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css')
+    style
+      //table spin
+  body
+    //script(type='text/javascript').
+    div(class='container')
+      h1 ¡El Grán Cadastro de los Productos Produzidos!
+      form()
+        label(for='titulo',text='titulo') titulo
+        input(name='titulo',type='text') 
+        
+        label(for='preco',text='preco') preco
+        input(name='preco',type='text')
+        
+        label(for='descricao',text='descricao') descricao
+        input(name='descricao',type='text')
+        br
+        input(type='submit',value='cadastrar')
