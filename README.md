@@ -53,7 +53,13 @@ Padrão ser **private** pela comunidade, não ficar usando como public.
 
 ## Curl
 
+### List
+
     curl -H "Accept:application/json" http://localhost:3000/produtos
+
+### Insert
+
+    curl -H "Content-Type: application/json" -X POST  -d '{"titulo":"titulo","preco":"10","descricao":"descricao"}' http://localhost:3000/produtos
 
 ## HTTP requests
 

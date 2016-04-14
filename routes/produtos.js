@@ -26,7 +26,7 @@ module.exports = function (app) {
     var produto = req.body;
     var dao = new ProdutoDaoAbobrinha( new ConnectionFactory().getConnection());
     dao.salva(produto, function(erros){
-      res. redirect('/produtos')
+      res.redirect('/produtos')
     });
   });
 

@@ -9,17 +9,17 @@ html(lang="pt-BR")
       //script(type='text/javascript').
       h1(class='title') La Listagem del productos! 😨😨
       table(class='table table-striped table-bordered')
-        thead 
-          tr 
-            th Titulo 😝
-            th Preço 😎
-            th Descrição 😒
+        thead
+          tr
+            th(style='text-align: center;') Titulo 😝
+            th(style='text-align: center;') Preço 😎
+            th(style='text-align: center;') Descrição 😒
         each val in produtos
           tr
             td=val.titulo
-              😐
+              |😐
             td=val.preco
-              😈
+              |😈
             td=val.descricao
-              😳
+              |😳
       a(class='btn btn-default', href='/produtos/novo') Inserir novo produto! ✍️✍️✍️
