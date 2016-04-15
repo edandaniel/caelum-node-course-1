@@ -17,6 +17,7 @@ module.exports = function(){
     conn.end();
   });
   //rotas ou controlers
+  app.use(require('express-validator')());
   require('../routes/produtos')(app);
   return app;
 };
