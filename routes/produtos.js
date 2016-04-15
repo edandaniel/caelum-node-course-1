@@ -6,8 +6,7 @@ module.exports = function (app) {
   });
 
   app.get('/produtos', function(req,res){
-    var con = new ConnectionFactory().getConnection();
-    var dao = new ProdutoDaoAbobrinha(con);//dao = data access object
+    var dao = new ProdutoDaoAbobrinha( app.get('connection') );
     dao.lista(function(erros,resultado){
       res.format({
           json:function(){
@@ -18,7 +17,6 @@ module.exports = function (app) {
           }
       });
     });
-    con.end();
   });
 
   app.post('/produtos',function(req,res){
@@ -30,12 +28,10 @@ module.exports = function (app) {
   });
 
   app.get('/produtos/novo', function(req,res){
-    var con = new ConnectionFactory().getConnection();
-    var dao = new ProdutoDaoAbobrinha(con);//dao = data access object
+    var dao = new ProdutoDaoAbobrinha( app.get('connection') );
     dao.lista(function(erros,resultado,colunas){
         res.render('form');
     });
-    con.end();
   });
 
 

@@ -12,7 +12,7 @@ module.exports = function(){
   app.use(function(req,res,segueEmFrente){
     var CF = require('../persistence/ConnectionFactory');
     var conn = new CF().getConnection();
-    app.set('connection'.conn);
+    app.set('connection',conn);
     segueEmFrente();
     conn.end();
   });
