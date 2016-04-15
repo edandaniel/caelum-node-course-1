@@ -4,12 +4,15 @@ function ConnectionFactory(){
 };
 
 ConnectionFactory.prototype.getConnection = function(){
-  return mysql.createConnection({
+  var config = {
     host:'localhost',
     database:'cdc',
     user:'root',
-    password:''
-  });
+    password:''};
+  if(process.env.NODE_ENV == 'test')
+    config.database = 'cdc_test';
+    
+  return mysql.createConnection(config);
 };
 
 module.exports = ConnectionFactory;

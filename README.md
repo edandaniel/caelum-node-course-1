@@ -2,11 +2,12 @@
 
 ## Git
 
+
     git@gitlab.com:edandaniel/caelum-node-course-1.git
     https://gitlab.com/edandaniel/caelum-node-course-.git
 
     pra mandar do local pro remote
-     //
+
     git push origin master
 
 ## bibliotecas npm
@@ -105,3 +106,11 @@ Testes
 
 Jasmine & Mocha
 Mocha -> Supertest
+
+### Como rodar os testes **(IMPORTANTE ESTAR TUDO NAS PASTAS CERTAS e.g. : /test/routes/)**
+    $ /caelum-node-course-1 > node_modules/mocha/bin/mocha --recursive
+
+## Variaveis de ambiente
+
+NODE_ENV = test
+         = prod
