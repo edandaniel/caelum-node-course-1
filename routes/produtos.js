@@ -24,21 +24,28 @@ module.exports = function (app) {
     //valida
     req.assert('titulo','Titulo é obrigatorio!').notEmpty();
     req.assert('preco','Preço é obrigatorio um numero!').isFloat();
-    var erros = req.validationErrors();
-    if (erros){
-      console.log(erros);
+    var erros_v = req.validationErrors(); //erros validacao
+    if (erros_v){
+      console.log(erros_v);
       //necessario para o jade, jade nao processa callback no render = EJS
-      var errosSend = [];
-      erros.forEach(function(erro){
-        errosSend.push({msg:erro.msg,value:erro.value});
+      var erros_v_cb = []; //recebe retorno do callback
+      erros_v.forEach(function(erro){
+        erros_v_cb.push({msg:erro.msg,value:erro.value});
       });
       //no EJ dava pra enviar direto a var erros e processar com callback lá
-      res.status(400).render('form',{errs:errosSend});
+      res.status(400).render('form',{errs:erros_v_cb});
       return;
     }
     //dao redirect
     var dao = new ProdutoDaoAbobrinha( app.get('connection') );
     dao.salva(produto, function(erros){
+      //testes
+      if(erros){
+        res.status(500);
+        res.render('erros/500',{erroServer:erros});
+        return;
+      }
+      //
       res.redirect('/produtos');
     });
   });

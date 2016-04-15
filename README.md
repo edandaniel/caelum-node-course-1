@@ -74,3 +74,34 @@ Padrão ser **private** pela comunidade, não ficar usando como public.
 
 - DELETE
   - Modifica, **deleta**
+
+## Testes Automatizados
+
+Testes
+
+1. outros
+  - manual
+  - canary/smoke (passa pelo caminho principal, canario em mina de gás)
+
+2. aceitação
+  - simula cliente
+  - caixa preta
+
+3. integração
+  - partes
+  - interno / externo
+  - caixa branca
+
+4. unidade
+  - function
+  - arquivo
+
+```
+         {1}    $$$$$$$$ manual | $$$ canary/smoke
+        / 2 \   $$$$$$
+       /  3  \  $$
+      /___4___\ $
+```
+
+Jasmine & Mocha
+Mocha -> Supertest
