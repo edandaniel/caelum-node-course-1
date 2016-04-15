@@ -9,11 +9,11 @@ module.exports = function(){
   app.use(bp.json());
 
   //pra garantir que todas conexoes se fechem, processa todos requests e fecha
-  app.use(function(req,res,next){
+  app.use(function(req,res,segueEmFrente){
     var CF = require('../persistence/ConnectionFactory');
     var conn = new CF().getConnection();
     app.set('connection'.conn);
-    next();
+    segueEmFrente();
     conn.end();
   });
   //rotas ou controlers
