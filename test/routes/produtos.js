@@ -5,7 +5,8 @@ describe('ProdutoRota',function(){
   it('lista produtos com html', function (done) {
     reqDoST.get('/produtos')
            .set('Accept','text/html')
-           .expect('Content-Type',/html/)
+           .expect('Content-Type',/html/)git filter-branch --force --index-filter \
+'git rm --cached --ignore-unmatch PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA' \
            .expect(200,done); //status
   });
 

@@ -1,0 +1,15 @@
+doctype html
+html(lang="pt-BR")
+  head
+    title PROMOÇÃO IMPERDIVEL
+    script(type='text/javascript',src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+    link(rel='stylesheet',href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+  body
+    div(class='container',style='text-align: center;')
+      h1(class='title') C-C-C-C-COMBO
+      form(action='/admin/promocao',method='POST')
+        select(name='id',class='form-control')
+          each val in produtos
+            option(value=val.id)=val.titulo
+        br
+        input(class='btn btn-primary',type='submit',value='PROMOVER $$$$')
