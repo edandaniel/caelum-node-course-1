@@ -23,3 +23,11 @@ html(lang="pt-BR")
             td=val.descricao
               |😳
       a(class='btn btn-default', href='/produtos/novo') Inserir novo produto! ✍️✍️✍️
+      script(src='/socket.io/socket.io.js')
+      script.
+        var socket = io();
+        socket.on('promoveProduto',function(dados){
+          console.log(dados);
+          alert('KONFIRA US PRODUTIU', + dados[0]);
+        });
+      

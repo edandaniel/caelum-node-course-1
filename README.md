@@ -114,3 +114,36 @@ Mocha -> Supertest
 
 NODE_ENV = test
          = prod
+
+## Websockets
+```
+              Server
+______________________
+|   _____________    |
+|   | _________ |    |
+|   | |  HTPP | |    |
+|   | |_______| |    |
+|   |           |    |
+|   | express   |    |
+|   |___________|    |
+|   |           |    |
+|   |     WS    |    |
+|   |___________|    |
+|____________________|
+
+```
+### Motivacao pra usar neste projeto
+
+- Problema : Produtos precisam ser atualizados para os clientes sempre verem ultimas 9dades
+  - Atualizar a pagina é muito pesado em recurso, request do documento inteiro e chamadas de todos produtos
+  - AJAX funciona mas as chamadas concorrem junto com o node
+
+- Solucao
+  - Sockets resolvem isso, mantendo conexoes direto com os clientes
+
+## Deploy
+
+```bash
+cd <pastadoprojeto>
+npm install
+```

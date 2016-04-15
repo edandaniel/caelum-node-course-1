@@ -9,8 +9,12 @@ PromocaoDao.prototype.lista = function(callback){
 }
 
 PromocaoDao.prototype.altera = function(produto,callback){
-  console.log(produto);
-  this._connection.query('update produtos set preco = preco - 2.50 where id='+produto.id+';',callback);
+  this._connection.query('update produtos set preco = preco - 2.50 where id=?;',produto.id,callback);
 }
 
+PromocaoDao.prototype.busca1 = function(produto,callback){
+  debugger;
+  this._connection.query('select titulo from produtos where id=?;',produto.id,callback);
+  debugger;
+}
 module.exports = PromocaoDao;
