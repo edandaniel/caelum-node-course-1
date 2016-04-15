@@ -43,8 +43,7 @@ module.exports = function (app) {
         console.log(erros);
         return;
       }
-      console.log(resultado.titulo);
-      app.get('io').emit('promoveProduto', resultado.titulo);
+      app.get('io').emit('promoveProduto', resultado[0].titulo);
 
       res.redirect('/admin/promocao');
     });
