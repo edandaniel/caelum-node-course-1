@@ -147,3 +147,8 @@ ______________________
 cd <pastadoprojeto>
 npm install
 ```
+## Banco de dados
+
+Parar exportar db com estrutura e dados
+
+    mysqldump database_name > database_name.sql
