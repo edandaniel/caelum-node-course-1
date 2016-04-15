@@ -32,7 +32,7 @@ module.exports = function (app) {
       erros.forEach(function(erro){
         errosSend.push({msg:erro.msg,value:erro.value});
       });
-      //se fosse EJ dava pra enviar direto a var erros e processar com callback lá
+      //no EJ dava pra enviar direto a var erros e processar com callback lá
       res.status(400).render('form',{errs:errosSend});
       return;
     }
@@ -46,7 +46,7 @@ module.exports = function (app) {
   app.get('/produtos/novo', function(req,res){
     var dao = new ProdutoDaoAbobrinha( app.get('connection') );
     dao.lista(function(erros,resultado,colunas){
-        res.render('form');
+        res.render('form',{produtos:{}});
     });
   });
 }
