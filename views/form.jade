@@ -11,6 +11,12 @@ html(lang="pt-BR")
     //script(type='text/javascript').
     div(class='container',style='text-align: center;')
       h1(class='title') NEW PRODUCT!!!!😂😂😂😂
+      ul(class='alert alert-danger',role='alert')
+        if locals.errs
+          each erro in locals.errs
+            li=erro.msg
+              span(class='glyphicon glyphicon-exclamation-sign',aria-hidden='true')
+              
       form(action='/produtos',method='POST')
         div(class='form-group')
           div(class='form-group')
